@@ -131,10 +131,10 @@
     int.innerHTML = "";
     var intlength = document.getElementById('intlength');
     intlength.innerHTML = "";
-    var framenum = 70;
+    const framenum = 101;
     var scale = 10;
 
-    var images = [framenum];
+    var images = new Array();
 
 
     function loadImages() {
@@ -165,11 +165,14 @@
         }else{
             int.innerHTML = Math.ceil(scroll_y/scale)-1;
         }
-        if(int.innerHTML>framenum){
-            //int.innerHTML = int.innerHTML - (Math.ceil(int.innerHTML/framenum)-1)*framenum
-            int.innerHTML =70;
+        if(int.innerHTML > framenum){
+            //int.innerHTML = int.innerHTML - (Math.ceil(int.innerHTML/framenum)-1)*framenum;
+            int.innerHTML = framenum;
+            intlength.innerHTML = int.innerHTML.length;
+        }else{
+            intlength.innerHTML = int.innerHTML.length;
         }
-        intlength.innerHTML = int.innerHTML.length;
+
 
 
 
